@@ -24,8 +24,7 @@ public class Monster : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = _deadSprite;
         _particleSystem.Play();
         yield return new WaitForSeconds(1);
-        
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     bool ShouldDieFromCollision(Collision2D collision)

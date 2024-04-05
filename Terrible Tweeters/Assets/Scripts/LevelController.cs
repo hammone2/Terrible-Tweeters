@@ -26,7 +26,9 @@ public class LevelController : MonoBehaviour
         foreach (var monster in _monsters)
         {
             if (monster.gameObject.activeSelf)
+            {
                 return false;
+            }
         }
 
         return true;
