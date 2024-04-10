@@ -9,6 +9,26 @@ public class Monster : MonoBehaviour
 
     bool _hasDied;
 
+    private void OnMouseDown()
+    {
+        GetComponent<AudioSource>().Play();
+    }
+
+    IEnumerator Start()
+    {
+        while(_hasDied == false)
+        {
+            float delay = Random.Range(5, 15);
+            yield return new WaitForSeconds(delay);
+            if (_hasDied == false)
+            {
+                
+            }
+                
+        }
+        
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (ShouldDieFromCollision(collision))

@@ -10,6 +10,7 @@ public class Bird : MonoBehaviour
     Vector2 _startPosition;
     Rigidbody2D _rigidbody2D;
     SpriteRenderer _spriteRenderer;
+    AudioSource audioSource;
     bool _resetting;
 
     public bool IsDragging { get; private set; }
@@ -19,6 +20,7 @@ public class Bird : MonoBehaviour
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Start is called before the first frame update
@@ -42,6 +44,8 @@ public class Bird : MonoBehaviour
 
         _rigidbody2D.isKinematic = false;
         _rigidbody2D.AddForce(direction * _launchForce);
+
+        audioSource.Play();
 
         _spriteRenderer.color = Color.white;
         IsDragging = false;
