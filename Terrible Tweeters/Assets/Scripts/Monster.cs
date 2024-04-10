@@ -22,7 +22,7 @@ public class Monster : MonoBehaviour
             yield return new WaitForSeconds(delay);
             if (_hasDied == false)
             {
-                
+                GetComponent<AudioSource>().Play();
             }
                 
         }
